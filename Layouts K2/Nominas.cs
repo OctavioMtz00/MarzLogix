@@ -389,7 +389,8 @@ namespace Layouts_K2
 
         private void dataGridView1_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            // Columna 3 (Índice 2)
+            // Verificamos que sea la columna de Importe (Columna 3, Índice 2 en tu formulario de Nómina)
+            // Nota: Si en este form el importe es la columna 4, cambia el 2 por un 3.
             if (e.ColumnIndex == 2 && e.RowIndex >= 0)
             {
                 var celda = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
@@ -398,12 +399,25 @@ namespace Layouts_K2
                 {
                     string valorEntrada = celda.Value.ToString();
 
-                    // Intentamos convertir a decimal para normalizar el formato
-                    if (decimal.TryParse(valorEntrada, out decimal monto))
+                    // 1. Aplicamos la misma limpieza que en el pegado (quitar $ y comas)
+                    string limpio = valorEntrada.Replace("$", "").Replace(",", "").Trim();
+
+                    // 2. Intentar convertir a decimal para forzar los dos decimales
+                    // Usamos InvariantCulture para que siempre reconozca el punto decimal
+                    if (decimal.TryParse(limpio, System.Globalization.NumberStyles.Any,
+                        System.Globalization.CultureInfo.InvariantCulture, out decimal monto))
                     {
-                        // Formateamos siempre a 2 decimales (ej: 10.5 -> 10.50)
-                        celda.Value = monto.ToString("0.00");
+                        // El formato "f2" lo deja como "0.00"
+                        celda.Value = monto.ToString("f2", System.Globalization.CultureInfo.InvariantCulture);
                     }
+                    else if (decimal.TryParse(limpio, out monto))
+                    {
+                        // Segundo intento por si el Windows del usuario usa comas
+                        celda.Value = monto.ToString("f2");
+                    }
+
+                    // 3. Actualizamos la suma total del formulario
+                    ActualizarSumaImportes();
                 }
             }
         }
