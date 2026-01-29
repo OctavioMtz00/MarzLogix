@@ -204,7 +204,7 @@
             buildLayoutInt.Name = "buildLayoutInt";
             buildLayoutInt.Size = new Size(124, 29);
             buildLayoutInt.TabIndex = 1;
-            buildLayoutInt.Text = "Generar Lay Out";
+            buildLayoutInt.Text = "Generar Layout";
             buildLayoutInt.UseVisualStyleBackColor = true;
             buildLayoutInt.Click += buildLayoutInt_Click;
             // 

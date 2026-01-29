@@ -64,7 +64,8 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Black;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.ColumnHeadersHeight = 25;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, CUENTA, IMPORTE });
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.Location = new Point(12, 12);
@@ -95,10 +96,12 @@
             // 
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             Nombre.DefaultCellStyle = dataGridViewCellStyle3;
+            Nombre.Frozen = true;
             Nombre.HeaderText = "NOMBRE";
             Nombre.MaxInputLength = 40;
             Nombre.MinimumWidth = 6;
             Nombre.Name = "Nombre";
+            Nombre.Resizable = DataGridViewTriState.False;
             Nombre.Width = 350;
             // 
             // CUENTA
@@ -109,6 +112,7 @@
             CUENTA.MaxInputLength = 18;
             CUENTA.MinimumWidth = 6;
             CUENTA.Name = "CUENTA";
+            CUENTA.Resizable = DataGridViewTriState.False;
             CUENTA.Width = 180;
             // 
             // IMPORTE
@@ -119,6 +123,7 @@
             IMPORTE.MaxInputLength = 15;
             IMPORTE.MinimumWidth = 6;
             IMPORTE.Name = "IMPORTE";
+            IMPORTE.Resizable = DataGridViewTriState.False;
             IMPORTE.Width = 125;
             // 
             // btnLONOM
@@ -127,7 +132,7 @@
             btnLONOM.Name = "btnLONOM";
             btnLONOM.Size = new Size(124, 45);
             btnLONOM.TabIndex = 2;
-            btnLONOM.Text = "Generar Lay Out";
+            btnLONOM.Text = "Generar Layout";
             btnLONOM.UseVisualStyleBackColor = true;
             btnLONOM.Click += btnLONOM_Click;
             // 
@@ -203,9 +208,9 @@
         private Button btnCNOM;
         private Button btnSalir;
         private Label lblContador;
+        private Label lblSumaImportes;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn CUENTA;
         private DataGridViewTextBoxColumn IMPORTE;
-        private Label lblSumaImportes;
     }
 }

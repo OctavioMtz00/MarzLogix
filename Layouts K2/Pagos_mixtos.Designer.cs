@@ -254,7 +254,7 @@
             btnLOMX.Name = "btnLOMX";
             btnLOMX.Size = new Size(129, 44);
             btnLOMX.TabIndex = 2;
-            btnLOMX.Text = "Generar Lay Out";
+            btnLOMX.Text = "Generar Layout";
             btnLOMX.UseVisualStyleBackColor = true;
             btnLOMX.Click += btnLOMX_Click;
             // 
@@ -292,7 +292,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1832, 768);
+            ClientSize = new Size(1737, 768);
             ControlBox = false;
             Controls.Add(lblSumaImportes);
             Controls.Add(lblContador);
@@ -302,8 +302,8 @@
             Controls.Add(dataGridView1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MaximumSize = new Size(1850, 815);
-            MinimumSize = new Size(1850, 815);
+            MaximumSize = new Size(1755, 815);
+            MinimumSize = new Size(1755, 815);
             Name = "Pagos_mixtos";
             SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;

@@ -316,26 +316,42 @@ namespace Layouts_K2
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // Suponiendo que la columna de la cuenta es la segunda (índice 1)
-            if (this.dataGridView1.Columns[e.ColumnIndex].Index == 1)
-            {
-                if (e.Value != null)
-                {
-                    string valor = e.Value.ToString().Trim();
-                    int largo = valor.Length;
+            // 1. Evitar validar encabezados o la fila vacía del final (*)
+            if (e.RowIndex < 0 || dataGridView1.Rows[e.RowIndex].IsNewRow) return;
 
-                    // Si no tiene 10 y tampoco tiene 18 caracteres
-                    if (largo != 10 && largo != 18 && largo > 0)
-                    {
-                        e.CellStyle.BackColor = Color.LightCoral; // Rojo claro
-                        e.CellStyle.ForeColor = Color.White;
-                    }
-                    else if (largo == 10 || largo == 18)
-                    {
-                        e.CellStyle.BackColor = Color.LightGreen; // Verde si es correcto
-                        e.CellStyle.ForeColor = Color.Black;
-                    }
+            // Obtener el valor actual de la celda de forma segura
+            string valor = e.Value?.ToString().Trim() ?? "";
+
+            // --- REGLA GENERAL: VALIDACIÓN DE VACÍOS ---
+            if (string.IsNullOrWhiteSpace(valor))
+            {
+                e.CellStyle.BackColor = Color.LightCoral;
+                e.CellStyle.ForeColor = Color.White;
+                return; // Salimos de la función ya que el rojo de "vacío" es prioritario
+            }
+
+            // --- REGLA ESPECÍFICA: COLUMNA DE CUENTA (Índice 1) ---
+            if (e.ColumnIndex == 1)
+            {
+                int largo = valor.Length;
+
+                if (largo == 10 || largo == 18)
+                {
+                    e.CellStyle.BackColor = Color.LightGreen; // Correcto
+                    e.CellStyle.ForeColor = Color.Black;
                 }
+                else
+                {
+                    e.CellStyle.BackColor = Color.LightCoral; // Incorrecto (Largo inválido)
+                    e.CellStyle.ForeColor = Color.White;
+                }
+            }
+            else
+            {
+                // --- COLUMNAS NOMBRE (0) E IMPORTE (2) ---
+                // Si tienen texto (ya validado arriba), restauramos el color normal
+                e.CellStyle.BackColor = Color.White;
+                e.CellStyle.ForeColor = Color.Black;
             }
         }
 
