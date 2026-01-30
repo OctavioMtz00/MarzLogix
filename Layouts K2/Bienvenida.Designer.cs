@@ -44,6 +44,7 @@
             // 
             // button1
             // 
+            button1.Cursor = Cursors.Hand;
             button1.Location = new Point(279, 157);
             button1.Name = "button1";
             button1.Size = new Size(172, 45);
@@ -84,6 +85,8 @@
             // 
             // btnNom
             // 
+            btnNom.Cursor = Cursors.Hand;
+            btnNom.FlatAppearance.BorderSize = 0;
             btnNom.Location = new Point(75, 98);
             btnNom.Name = "btnNom";
             btnNom.Size = new Size(172, 40);
@@ -94,6 +97,7 @@
             // 
             // btnPmx
             // 
+            btnPmx.Cursor = Cursors.Hand;
             btnPmx.Location = new Point(75, 157);
             btnPmx.Name = "btnPmx";
             btnPmx.Size = new Size(172, 45);
@@ -104,6 +108,7 @@
             // 
             // btnACM
             // 
+            btnACM.Cursor = Cursors.Hand;
             btnACM.Location = new Point(75, 223);
             btnACM.Name = "btnACM";
             btnACM.Size = new Size(172, 45);
@@ -113,6 +118,7 @@
             // 
             // btnAltIB
             // 
+            btnAltIB.Cursor = Cursors.Hand;
             btnAltIB.Location = new Point(279, 98);
             btnAltIB.Name = "btnAltIB";
             btnAltIB.Size = new Size(172, 40);
@@ -122,6 +128,7 @@
             // 
             // btnAltasCIE
             // 
+            btnAltasCIE.Cursor = Cursors.Hand;
             btnAltasCIE.Location = new Point(279, 223);
             btnAltasCIE.Name = "btnAltasCIE";
             btnAltasCIE.Size = new Size(172, 45);
@@ -131,6 +138,7 @@
             // 
             // btnExit
             // 
+            btnExit.Cursor = Cursors.Hand;
             btnExit.Location = new Point(46, 339);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(94, 29);

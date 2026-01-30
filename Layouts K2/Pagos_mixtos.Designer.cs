@@ -67,6 +67,7 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(192, 255, 192);
             dataGridViewCellStyle1.SelectionForeColor = Color.Black;
             dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.DarkSlateGray;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
