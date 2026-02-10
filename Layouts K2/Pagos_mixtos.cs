@@ -535,6 +535,58 @@ namespace Layouts_K2
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // 1. Seguridad: No validar encabezados ni la fila de inserción nueva
+            if (e.RowIndex < 0 || dataGridView1.Rows[e.RowIndex].IsNewRow) return;
+
+            var celda = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            string valor = e.Value?.ToString().Trim() ?? "";
+
+            // --- CASO A: Celdas Bloqueadas (Solo Lectura) ---
+            if (celda.ReadOnly)
+            {
+                e.CellStyle.BackColor = Color.FromArgb(240, 240, 240); // Gris claro
+                e.CellStyle.ForeColor = Color.Gray;
+                return;
+            }
+
+            // --- CASO B: Celdas Obligatorias VACÍAS ---
+            if (string.IsNullOrWhiteSpace(valor))
+            {
+                e.CellStyle.BackColor = Color.LightCoral;
+                e.CellStyle.ForeColor = Color.White;
+                return;
+            }
+
+            // --- CASO C: Validación Especial de Cuentas (Columna 2 - Índice 1) ---
+            // Solo si no está vacía y es la columna de cuenta
+            if (e.ColumnIndex == 1)
+            {
+                int largo = valor.Length;
+                if (largo == 10 || largo == 18)
+                {
+                    e.CellStyle.BackColor = Color.LightGreen;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+                else
+                {
+                    e.CellStyle.BackColor = Color.LightCoral;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+                return;
+            }
+
+            // --- CASO D: Celdas con datos válidos ---
+            e.CellStyle.BackColor = Color.White;
+            e.CellStyle.ForeColor = Color.Black;
+        }
     }
 
 }

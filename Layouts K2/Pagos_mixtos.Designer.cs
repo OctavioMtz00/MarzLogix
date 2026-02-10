@@ -96,6 +96,8 @@
             dataGridView1.Size = new Size(1717, 644);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellBeginEdit += dataGridView1_CellBeginEdit;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
             dataGridView1.CellValidated += dataGridView1_CellValidated;
             dataGridView1.CellValidating += dataGridView1_CellValidating;
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
@@ -106,9 +108,9 @@
             // Column1
             // 
             Column1.HeaderText = "TIPO DE OPERACION";
-            Column1.MaxInputLength = 14;
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
+            Column1.Resizable = DataGridViewTriState.True;
             Column1.Width = 110;
             // 
             // CUENTA

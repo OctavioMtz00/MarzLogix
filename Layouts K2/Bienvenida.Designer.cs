@@ -115,6 +115,7 @@
             btnACM.TabIndex = 6;
             btnACM.Text = "Altas mismo banco";
             btnACM.UseVisualStyleBackColor = true;
+            btnACM.Click += btnACM_Click;
             // 
             // btnAltIB
             // 

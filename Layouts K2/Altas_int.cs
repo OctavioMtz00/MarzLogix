@@ -252,21 +252,21 @@ namespace Layouts_K2
 
         private void Altas_int_FormClosing(object sender, FormClosingEventArgs e)
         {
-          /*  // Verificamos si el cierre fue iniciado por el usuario (X, Alt+F4, etc.)
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                DialogResult resultado = MessageBox.Show(
-                    "¿Está seguro de que desea salir del programa?",
-                    "Confirmar Salida",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
+            /*  // Verificamos si el cierre fue iniciado por el usuario (X, Alt+F4, etc.)
+              if (e.CloseReason == CloseReason.UserClosing)
+              {
+                  DialogResult resultado = MessageBox.Show(
+                      "¿Está seguro de que desea salir del programa?",
+                      "Confirmar Salida",
+                      MessageBoxButtons.YesNo,
+                      MessageBoxIcon.Question);
 
-                if (resultado == DialogResult.No)
-                {
-                    // Detenemos el cierre
-                    e.Cancel = true;
-                }
-            }*/
+                  if (resultado == DialogResult.No)
+                  {
+                      // Detenemos el cierre
+                      e.Cancel = true;
+                  }
+              }*/
         }
 
         private void btnCloseAI_Click(object sender, EventArgs e)
@@ -298,5 +298,45 @@ namespace Layouts_K2
                 {"Russian Federation", "RU"}, {"Saudi Arabia", "SA"}, {"Sweden", "SE"}, {"Singapore", "SG"},
                 {"Türkiye", "TR"}, {"United States of America", "US"}, {"South Africa", "ZA"}
             };
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // 1. Ignorar encabezados y la fila de asterisco (*)
+            if (e.RowIndex < 0 || dataGridView1.Rows[e.RowIndex].IsNewRow) return;
+
+            string valor = e.Value?.ToString().Trim() ?? "";
+
+            // --- ESCENARIO 1: CELDAS VACÍAS (Prioridad Máxima) ---
+            if (string.IsNullOrWhiteSpace(valor))
+            {
+                e.CellStyle.BackColor = Color.LightCoral;
+                e.CellStyle.ForeColor = Color.White;
+                return;
+            }
+
+            // --- ESCENARIO 2: VALIDACIÓN DE CUENTA (Columna 2 - Índice 1) ---
+            if (e.ColumnIndex == 1)
+            {
+                int largo = valor.Length;
+                // En internacionales, a veces las cuentas varían, 
+                // pero mantenemos tu regla de 10 u 18 si el banco lo exige.
+                if (largo == 10 || largo == 18)
+                {
+                    e.CellStyle.BackColor = Color.LightGreen;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+                else
+                {
+                    e.CellStyle.BackColor = Color.LightCoral;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+                return;
+            }
+
+            // --- ESCENARIO 3: CAMPOS COMPLETOS ---
+            // Si la celda tiene datos y no es la cuenta, vuelve al color normal
+            e.CellStyle.BackColor = Color.White;
+            e.CellStyle.ForeColor = Color.Black;                                                                                                               
+        }
     }
 }
