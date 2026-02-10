@@ -37,7 +37,7 @@ namespace Layouts_K2
 
                             // --- COLUMNA 1: CUENTA (1 a 18) ---
                             string cuenta = fila.Cells[0].Value?.ToString().Trim() ?? "";
-                            InsertarCampoManual(ref linea, cuenta.PadRight(18, '0'), 0, 18);
+                            InsertarCampoManual(ref linea, cuenta.PadLeft(18, '0'), 0, 18);
 
                             // --- COLUMNA 2: DIVISA (19 a 21) ---
                             string divisa = fila.Cells[1].Value?.ToString().ToUpper().Trim() ?? "MXP";
@@ -65,11 +65,11 @@ namespace Layouts_K2
                             InsertarCampoManual(ref linea, alias.PadRight(30, ' '), 67, 30);
 
                             // --- COLUMNA 5: EMAIL (98 a 177) ---
-                            string email = fila.Cells[4].Value?.ToString().Trim() ?? "";
+                            string email = fila.Cells[4].Value?.ToString().ToLower().Trim() ?? "";
                             InsertarCampoManual(ref linea, email.PadRight(80, ' '), 97, 80);
 
                             // Escribir línea + Vuelta de carro (WriteLine agrega el 0D0A automáticamente)
-                            sw.WriteLine(new string(linea).ToUpper());
+                            sw.WriteLine(new string(linea));
 
                             /* 0D25
                             string contenidoLinea = new string(linea).ToUpper();
