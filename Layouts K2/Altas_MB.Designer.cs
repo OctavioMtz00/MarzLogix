@@ -35,13 +35,13 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Altas_MB));
             dataGridView1 = new DataGridView();
             Nombre = new DataGridViewTextBoxColumn();
             CUENTA = new DataGridViewTextBoxColumn();
             IMPORTE = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
-            button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
@@ -83,9 +83,10 @@
             dataGridViewCellStyle7.SelectionBackColor = Color.Lavender;
             dataGridViewCellStyle7.SelectionForeColor = Color.Black;
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridView1.Size = new Size(976, 511);
+            dataGridView1.Size = new Size(900, 511);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellFormatting += dataGridView1_CellFormatting;
+            dataGridView1.CellValidated += dataGridView1_CellValidated;
             dataGridView1.RowsAdded += dataGridView1_RowsAdded;
             dataGridView1.RowsRemoved += dataGridView1_RowsRemoved;
             dataGridView1.KeyDown += dataGridView1_KeyDown;
@@ -100,7 +101,7 @@
             Nombre.MinimumWidth = 6;
             Nombre.Name = "Nombre";
             Nombre.Resizable = DataGridViewTriState.False;
-            Nombre.Width = 180;
+            Nombre.Width = 140;
             // 
             // CUENTA
             // 
@@ -138,15 +139,6 @@
             Column2.Name = "Column2";
             Column2.Width = 250;
             // 
-            // button1
-            // 
-            button1.Location = new Point(34, 474);
-            button1.Name = "button1";
-            button1.Size = new Size(8, 8);
-            button1.TabIndex = 2;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             button2.Location = new Point(12, 536);
@@ -159,7 +151,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(868, 529);
+            button3.Location = new Point(792, 529);
             button3.Name = "button3";
             button3.Size = new Size(120, 34);
             button3.TabIndex = 4;
@@ -169,7 +161,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(868, 569);
+            button4.Location = new Point(792, 569);
             button4.Name = "button4";
             button4.Size = new Size(120, 34);
             button4.TabIndex = 5;
@@ -181,25 +173,30 @@
             // 
             lblContador.AutoSize = true;
             lblContador.Font = new Font("Calibri", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblContador.Location = new Point(322, 554);
+            lblContador.Location = new Point(294, 549);
             lblContador.Name = "lblContador";
             lblContador.Size = new Size(218, 35);
             lblContador.TabIndex = 6;
             lblContador.Text = "Total de registros:";
+            lblContador.Click += lblContador_Click;
             // 
             // Altas_MB
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 615);
+            ClientSize = new Size(922, 615);
+            ControlBox = false;
             Controls.Add(lblContador);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(dataGridView1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MaximumSize = new Size(940, 662);
+            MinimumSize = new Size(940, 662);
             Name = "Altas_MB";
-            Text = "Altas_MB";
+            Text = "Altas Mismo Banco";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -208,7 +205,6 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private Button button1;
         private Button button2;
         private Button button3;
         private Button button4;

@@ -126,6 +126,7 @@
             btnAltIB.TabIndex = 7;
             btnAltIB.Text = "Altas interbancarias";
             btnAltIB.UseVisualStyleBackColor = true;
+            btnAltIB.Click += btnAltIB_Click;
             // 
             // btnAltasCIE
             // 

@@ -245,38 +245,84 @@ namespace Layouts_K2
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            // 1. Seguridad: No validar encabezados ni la fila nueva (*)
             if (e.RowIndex < 0 || dataGridView1.Rows[e.RowIndex].IsNewRow) return;
 
             string valor = e.Value?.ToString().Trim() ?? "";
 
-            // 1. Marcar Vacíos en Rojo (Faltan datos)
-            if (string.IsNullOrWhiteSpace(valor))
+            // --- VALIDACIÓN ESPECÍFICA: COLUMNA CUENTA (Índice 0) ---
+            if (e.ColumnIndex == 0)
             {
-                e.CellStyle.BackColor = Color.LightCoral;
-                e.CellStyle.ForeColor = Color.White;
-                return;
-            }
-
-            // 2. Validación específica de DIVISA (Columna 2 - Índice 1)
-            if (e.ColumnIndex == 1)
-            {
-                string[] permitidas = { "MXP", "EUR", "USD" };
-                if (permitidas.Contains(valor.ToUpper()))
+                if (string.IsNullOrWhiteSpace(valor))
                 {
+                    // Celda vacía: Rojo (Error crítico)
+                    e.CellStyle.BackColor = Color.LightCoral;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+                else if (valor.Length == 10 || valor.Length == 18)
+                {
+                    // Largo correcto: Verde
                     e.CellStyle.BackColor = Color.LightGreen;
                     e.CellStyle.ForeColor = Color.Black;
                 }
                 else
                 {
-                    e.CellStyle.BackColor = Color.Orange; // Aviso de moneda no soportada
+                    // Tiene datos pero el largo es inválido: Naranja
+                    e.CellStyle.BackColor = Color.Orange;
                     e.CellStyle.ForeColor = Color.White;
                 }
-                return;
+                return; // Salimos para no aplicar las reglas generales
             }
 
-            // 3. Todo lo demás con datos se queda en blanco
-            e.CellStyle.BackColor = Color.White;
-            e.CellStyle.ForeColor = Color.Black;
+            // --- REGLA GENERAL PARA EL RESTO DE LAS COLUMNAS ---
+            if (string.IsNullOrWhiteSpace(valor))
+            {
+                // Cualquier otra celda obligatoria vacía se marca en rojo
+                e.CellStyle.BackColor = Color.LightCoral;
+                e.CellStyle.ForeColor = Color.White;
+            }
+            else
+            {
+                // Si tiene datos, fondo blanco normal
+                e.CellStyle.BackColor = Color.White;
+                e.CellStyle.ForeColor = Color.Black;
+            }
+        }
+
+        private void dataGridView1_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificamos que sea la columna de IMPORTE MAX (Índice 2)
+            if (e.ColumnIndex == 2 && e.RowIndex >= 0)
+            {
+                var celda = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                if (celda.Value != null && !string.IsNullOrWhiteSpace(celda.Value.ToString()))
+                {
+                    string valorEntrada = celda.Value.ToString();
+
+                    // 1. Limpieza de símbolos y comas
+                    string limpio = valorEntrada.Replace("$", "").Replace(",", "").Trim();
+
+                    // 2. Intentar convertir a decimal y forzar 2 decimales
+                    if (decimal.TryParse(limpio, System.Globalization.NumberStyles.Any,
+                        System.Globalization.CultureInfo.InvariantCulture, out decimal monto))
+                    {
+                        celda.Value = monto.ToString("f2", System.Globalization.CultureInfo.InvariantCulture);
+                    }
+                    else if (decimal.TryParse(limpio, out monto))
+                    {
+                        celda.Value = monto.ToString("f2");
+                    }
+                }
+            }
+
+
+
+        }
+
+        private void lblContador_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

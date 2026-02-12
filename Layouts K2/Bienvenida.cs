@@ -68,5 +68,12 @@ namespace Layouts_K2
             frm1.Show();
             this.Hide();
         }
+
+        private void btnAltIB_Click(object sender, EventArgs e)
+        {
+            Form frm1 = new Altas_Interbancarias();
+            frm1.Show();
+            this.Hide();
+        }
     }
 }
