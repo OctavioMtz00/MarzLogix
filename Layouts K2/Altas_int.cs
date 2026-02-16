@@ -140,7 +140,7 @@ namespace Layouts_K2
 
                                 // Si Col M es solo la pos 815 (1 carácter), ajusta el largo. 
                                 // Normalmente ISO son 2 chars. Usaré largo 1 según tu instrucción previa para M.
-                                InsertarCampo(ref linea, codigoIso, 814, 1); // Col M (815)
+                                InsertarCampo(ref linea, codigoIso, 814, 2); // Col M (815)
                             }
 
                             // Insertar Nombre del País en Col N (Posición 817-846)
