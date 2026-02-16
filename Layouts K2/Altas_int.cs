@@ -315,7 +315,7 @@ namespace Layouts_K2
             }
 
             // --- ESCENARIO 2: VALIDACIÓN DE CUENTA (Columna 2 - Índice 1) ---
-            if (e.ColumnIndex == 1)
+            if (e.ColumnIndex == 0)
             {
                 int largo = valor.Length;
                 // En internacionales, a veces las cuentas varían, 
