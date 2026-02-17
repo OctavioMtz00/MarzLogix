@@ -84,6 +84,10 @@
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.Size = new Size(1132, 511);
             dataGridView1.TabIndex = 2;
+            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
+            dataGridView1.RowsAdded += dataGridView1_RowsAdded;
+            dataGridView1.RowsRemoved += dataGridView1_RowsRemoved;
+            dataGridView1.KeyDown += dataGridView1_KeyDown;
             // 
             // CLABE
             // 
@@ -156,6 +160,7 @@
             button3.TabIndex = 8;
             button3.Text = "Generar Layout";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -181,6 +186,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Altas_Interbancarias";
             Text = "Altas Interbancarias";
+            Load += Altas_Interbancarias_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

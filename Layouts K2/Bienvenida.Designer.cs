@@ -37,7 +37,6 @@
             btnPmx = new Button();
             btnACM = new Button();
             btnAltIB = new Button();
-            btnAltasCIE = new Button();
             btnExit = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -128,20 +127,10 @@
             btnAltIB.UseVisualStyleBackColor = true;
             btnAltIB.Click += btnAltIB_Click;
             // 
-            // btnAltasCIE
-            // 
-            btnAltasCIE.Cursor = Cursors.Hand;
-            btnAltasCIE.Location = new Point(279, 223);
-            btnAltasCIE.Name = "btnAltasCIE";
-            btnAltasCIE.Size = new Size(172, 45);
-            btnAltasCIE.TabIndex = 8;
-            btnAltasCIE.Text = "Altas CIE";
-            btnAltasCIE.UseVisualStyleBackColor = true;
-            // 
             // btnExit
             // 
             btnExit.Cursor = Cursors.Hand;
-            btnExit.Location = new Point(46, 339);
+            btnExit.Location = new Point(75, 349);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(94, 29);
             btnExit.TabIndex = 9;
@@ -157,7 +146,6 @@
             ClientSize = new Size(525, 418);
             ControlBox = false;
             Controls.Add(btnExit);
-            Controls.Add(btnAltasCIE);
             Controls.Add(btnAltIB);
             Controls.Add(btnACM);
             Controls.Add(btnPmx);
@@ -188,7 +176,6 @@
         private Button btnPmx;
         private Button btnACM;
         private Button btnAltIB;
-        private Button btnAltasCIE;
         private Button btnExit;
     }
 }
