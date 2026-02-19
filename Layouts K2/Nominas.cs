@@ -235,7 +235,7 @@ namespace Layouts_K2
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Archivo de texto (*.txt)|*.txt";
             saveFileDialog.Title = "Guardar Layout de Nómina";
-            saveFileDialog.FileName = "Layout_Nomina_" + DateTime.Now.ToString("yyyyMMdd");
+            saveFileDialog.FileName = "Dispersión de Nomina K2_" + DateTime.Now.ToString("yyyyMMdd");
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -435,6 +435,26 @@ namespace Layouts_K2
                     // 3. Actualizamos la suma total del formulario
                     ActualizarSumaImportes();
                 }
+            }
+        }
+
+        private void blHelp_Click(object sender, EventArgs e)
+        {
+            // La URL incluye el ancla #nominas para ir directo a esa sección
+            string urlManual = "https://app.bitmx.cloud/Fincore/Manual.html#nominas";
+
+            try
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = urlManual,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo conectar con el manual: " + ex.Message,
+                                "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

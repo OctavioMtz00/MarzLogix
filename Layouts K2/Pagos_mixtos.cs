@@ -240,6 +240,11 @@ namespace Layouts_K2
                 case "INTERNACIONAL":
                     // Se queda todo habilitado
                     break;
+                case "INTERNACIONAL2":
+                    // Se queda todo habilitado
+                    break;
+
+
             }
         }
 
@@ -349,6 +354,9 @@ namespace Layouts_K2
                                     lineaResultado = GenerarLineaMismoBanco(fila);
                                     break;
                                 case "INTERNACIONAL":
+                                    lineaResultado = GenerarLineaInternacional(fila);
+                                    break;
+                                case "INTERNACIONAL2":
                                     lineaResultado = GenerarLineaInternacional(fila);
                                     break;
                                 default:

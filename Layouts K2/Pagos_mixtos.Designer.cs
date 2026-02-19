@@ -34,6 +34,11 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pagos_mixtos));
             dataGridView1 = new DataGridView();
+            btnExit = new Button();
+            btnLOMX = new Button();
+            btnCln = new Button();
+            lblContador = new Label();
+            lblSumaImportes = new Label();
             Column1 = new DataGridViewTextBoxColumn();
             CUENTA = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -42,20 +47,17 @@
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
-            Column12 = new DataGridViewTextBoxColumn();
             Column8 = new DataGridViewTextBoxColumn();
             Column9 = new DataGridViewTextBoxColumn();
             Column14 = new DataGridViewTextBoxColumn();
+            Column12 = new DataGridViewTextBoxColumn();
+            Column18 = new DataGridViewTextBoxColumn();
+            Column11 = new DataGridViewTextBoxColumn();
             Column13 = new DataGridViewTextBoxColumn();
             Column10 = new DataGridViewTextBoxColumn();
             Column15 = new DataGridViewTextBoxColumn();
             Column16 = new DataGridViewTextBoxColumn();
             Column17 = new DataGridViewTextBoxColumn();
-            btnExit = new Button();
-            btnLOMX = new Button();
-            btnCln = new Button();
-            lblContador = new Label();
-            lblSumaImportes = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -77,7 +79,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, CUENTA, Column2, Column3, Column6, Column4, Column5, Column7, Column12, Column8, Column9, Column14, Column13, Column10, Column15, Column16, Column17 });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, CUENTA, Column2, Column3, Column6, Column4, Column5, Column7, Column8, Column9, Column14, Column12, Column18, Column11, Column13, Column10, Column15, Column16, Column17 });
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.Location = new Point(12, 12);
             dataGridView1.Name = "dataGridView1";
@@ -104,6 +106,56 @@
             dataGridView1.RowsAdded += dataGridView1_RowsAdded;
             dataGridView1.RowsRemoved += dataGridView1_RowsRemoved;
             dataGridView1.KeyDown += dataGridView1_KeyDown;
+            // 
+            // btnExit
+            // 
+            btnExit.Location = new Point(12, 693);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(139, 51);
+            btnExit.TabIndex = 1;
+            btnExit.Text = "Salir";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
+            // 
+            // btnLOMX
+            // 
+            btnLOMX.Location = new Point(1600, 662);
+            btnLOMX.Name = "btnLOMX";
+            btnLOMX.Size = new Size(129, 44);
+            btnLOMX.TabIndex = 2;
+            btnLOMX.Text = "Generar Layout";
+            btnLOMX.UseVisualStyleBackColor = true;
+            btnLOMX.Click += btnLOMX_Click;
+            // 
+            // btnCln
+            // 
+            btnCln.Location = new Point(1600, 712);
+            btnCln.Name = "btnCln";
+            btnCln.Size = new Size(129, 44);
+            btnCln.TabIndex = 3;
+            btnCln.Text = "Limpiar tabla";
+            btnCln.UseVisualStyleBackColor = true;
+            btnCln.Click += btnCln_Click;
+            // 
+            // lblContador
+            // 
+            lblContador.AutoSize = true;
+            lblContador.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblContador.Location = new Point(329, 693);
+            lblContador.Name = "lblContador";
+            lblContador.Size = new Size(277, 41);
+            lblContador.TabIndex = 4;
+            lblContador.Text = "Total de registros: 0";
+            // 
+            // lblSumaImportes
+            // 
+            lblSumaImportes.AutoSize = true;
+            lblSumaImportes.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSumaImportes.Location = new Point(904, 693);
+            lblSumaImportes.Name = "lblSumaImportes";
+            lblSumaImportes.Size = new Size(293, 41);
+            lblSumaImportes.TabIndex = 5;
+            lblSumaImportes.Text = "Total importes: $0.00";
             // 
             // Column1
             // 
@@ -169,14 +221,6 @@
             Column7.Name = "Column7";
             Column7.Width = 127;
             // 
-            // Column12
-            // 
-            Column12.HeaderText = "BANCO BENEFICIARIO";
-            Column12.MaxInputLength = 30;
-            Column12.MinimumWidth = 6;
-            Column12.Name = "Column12";
-            Column12.Width = 127;
-            // 
             // Column8
             // 
             Column8.HeaderText = "PAIS DEL BENEFICIARIO";
@@ -187,7 +231,7 @@
             // 
             // Column9
             // 
-            Column9.HeaderText = "DIRECCION BANCO";
+            Column9.HeaderText = "DIRECCION DEL BENEFICIARIO";
             Column9.MaxInputLength = 40;
             Column9.MinimumWidth = 6;
             Column9.Name = "Column9";
@@ -200,6 +244,28 @@
             Column14.MinimumWidth = 6;
             Column14.Name = "Column14";
             Column14.Width = 125;
+            // 
+            // Column12
+            // 
+            Column12.HeaderText = "BANCO BENEFICIARIO";
+            Column12.MaxInputLength = 30;
+            Column12.MinimumWidth = 6;
+            Column12.Name = "Column12";
+            Column12.Width = 127;
+            // 
+            // Column18
+            // 
+            Column18.HeaderText = "PAIS BANCO BENEFICIARIO";
+            Column18.MinimumWidth = 6;
+            Column18.Name = "Column18";
+            Column18.Width = 125;
+            // 
+            // Column11
+            // 
+            Column11.HeaderText = "DIRECCION BANCO BENFICIARIO";
+            Column11.MinimumWidth = 6;
+            Column11.Name = "Column11";
+            Column11.Width = 125;
             // 
             // Column13
             // 
@@ -240,56 +306,6 @@
             Column17.MinimumWidth = 6;
             Column17.Name = "Column17";
             Column17.Width = 125;
-            // 
-            // btnExit
-            // 
-            btnExit.Location = new Point(12, 693);
-            btnExit.Name = "btnExit";
-            btnExit.Size = new Size(139, 51);
-            btnExit.TabIndex = 1;
-            btnExit.Text = "Salir";
-            btnExit.UseVisualStyleBackColor = true;
-            btnExit.Click += btnExit_Click;
-            // 
-            // btnLOMX
-            // 
-            btnLOMX.Location = new Point(1600, 662);
-            btnLOMX.Name = "btnLOMX";
-            btnLOMX.Size = new Size(129, 44);
-            btnLOMX.TabIndex = 2;
-            btnLOMX.Text = "Generar Layout";
-            btnLOMX.UseVisualStyleBackColor = true;
-            btnLOMX.Click += btnLOMX_Click;
-            // 
-            // btnCln
-            // 
-            btnCln.Location = new Point(1600, 712);
-            btnCln.Name = "btnCln";
-            btnCln.Size = new Size(129, 44);
-            btnCln.TabIndex = 3;
-            btnCln.Text = "Limpiar tabla";
-            btnCln.UseVisualStyleBackColor = true;
-            btnCln.Click += btnCln_Click;
-            // 
-            // lblContador
-            // 
-            lblContador.AutoSize = true;
-            lblContador.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblContador.Location = new Point(329, 693);
-            lblContador.Name = "lblContador";
-            lblContador.Size = new Size(277, 41);
-            lblContador.TabIndex = 4;
-            lblContador.Text = "Total de registros: 0";
-            // 
-            // lblSumaImportes
-            // 
-            lblSumaImportes.AutoSize = true;
-            lblSumaImportes.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSumaImportes.Location = new Point(904, 693);
-            lblSumaImportes.Name = "lblSumaImportes";
-            lblSumaImportes.Size = new Size(293, 41);
-            lblSumaImportes.TabIndex = 5;
-            lblSumaImportes.Text = "Total importes: $0.00";
             // 
             // Pagos_mixtos
             // 
@@ -333,10 +349,12 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column12;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn Column14;
+        private DataGridViewTextBoxColumn Column12;
+        private DataGridViewTextBoxColumn Column18;
+        private DataGridViewTextBoxColumn Column11;
         private DataGridViewTextBoxColumn Column13;
         private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column15;

@@ -75,5 +75,29 @@ namespace Layouts_K2
             frm1.Show();
             this.Hide();
         }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            string url = "https://app.bitmx.cloud/Fincore/Manual.html";
+            try
+            {
+                // Abre el manual en el navegador predeterminado
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo abrir el manual: " + ex.Message,
+                                "Error de enlace", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Bienvenida_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

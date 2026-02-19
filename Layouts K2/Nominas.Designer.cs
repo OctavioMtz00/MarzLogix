@@ -45,6 +45,7 @@
             btnSalir = new Button();
             lblContador = new Label();
             lblSumaImportes = new Label();
+            blHelp = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -128,7 +129,8 @@
             // 
             // btnLONOM
             // 
-            btnLONOM.Location = new Point(598, 619);
+            btnLONOM.Cursor = Cursors.Hand;
+            btnLONOM.Location = new Point(594, 656);
             btnLONOM.Name = "btnLONOM";
             btnLONOM.Size = new Size(124, 45);
             btnLONOM.TabIndex = 2;
@@ -138,7 +140,8 @@
             // 
             // btnCNOM
             // 
-            btnCNOM.Location = new Point(598, 670);
+            btnCNOM.Cursor = Cursors.Hand;
+            btnCNOM.Location = new Point(594, 707);
             btnCNOM.Name = "btnCNOM";
             btnCNOM.Size = new Size(124, 45);
             btnCNOM.TabIndex = 3;
@@ -148,8 +151,9 @@
             // 
             // btnSalir
             // 
+            btnSalir.Cursor = Cursors.Hand;
             btnSalir.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSalir.Location = new Point(12, 628);
+            btnSalir.Location = new Point(12, 664);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(122, 82);
             btnSalir.TabIndex = 4;
@@ -160,29 +164,42 @@
             // lblContador
             // 
             lblContador.AutoSize = true;
-            lblContador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblContador.Location = new Point(286, 628);
+            lblContador.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblContador.Location = new Point(238, 628);
             lblContador.Name = "lblContador";
-            lblContador.Size = new Size(182, 28);
+            lblContador.Size = new Size(227, 27);
             lblContador.TabIndex = 5;
             lblContador.Text = "Total de registros: 0";
             // 
             // lblSumaImportes
             // 
             lblSumaImportes.AutoSize = true;
-            lblSumaImportes.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSumaImportes.Location = new Point(211, 656);
+            lblSumaImportes.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSumaImportes.Location = new Point(205, 664);
             lblSumaImportes.Name = "lblSumaImportes";
-            lblSumaImportes.Size = new Size(293, 41);
+            lblSumaImportes.Size = new Size(311, 37);
             lblSumaImportes.TabIndex = 6;
             lblSumaImportes.Text = "Total importes: $0.00";
+            // 
+            // blHelp
+            // 
+            blHelp.AutoSize = true;
+            blHelp.Cursor = Cursors.Hand;
+            blHelp.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            blHelp.Location = new Point(269, 738);
+            blHelp.Name = "blHelp";
+            blHelp.Size = new Size(168, 19);
+            blHelp.TabIndex = 7;
+            blHelp.Text = "¿Necesitas ayuda?";
+            blHelp.Click += blHelp_Click;
             // 
             // Nominas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(730, 728);
+            ClientSize = new Size(730, 768);
             ControlBox = false;
+            Controls.Add(blHelp);
             Controls.Add(lblSumaImportes);
             Controls.Add(lblContador);
             Controls.Add(btnSalir);
@@ -193,7 +210,7 @@
             MaximizeBox = false;
             Name = "Nominas";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Nominas";
+            Text = "Dispersión de nómina";
             FormClosing += Nominas_FormClosing;
             FormClosed += Nominas_FormClosed;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -212,5 +229,6 @@
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn CUENTA;
         private DataGridViewTextBoxColumn IMPORTE;
+        private Label blHelp;
     }
 }
