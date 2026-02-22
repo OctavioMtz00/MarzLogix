@@ -48,4 +48,8 @@
     </None>
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if $(ConfigurationName) == Release &quot;$(Obfuscar)&quot; &quot;$(ProjectDir)obfuscar.xml&quot;" />
+  </Target>
+
 </Project>
