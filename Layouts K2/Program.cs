@@ -8,7 +8,7 @@ namespace Layouts_K2 // Cambia esto por tu namespace real
     static class Program
     {
         // Pega aquí la URL "Raw" de tu Gist Secreto
-        private const string UrlLicencia = "https://gist.githubusercontent.com/OctavioMtz00/78a51439ef21945e5a25d2c44aa3d514/raw/47baef2b53869336bbe18e137d6e2e61c4864bd3/licencia.json";
+        private const string UrlLicencia = "https://gist.githubusercontent.com/OctavioMtz00/78a51439ef21945e5a25d2c44aa3d514/raw/licencia.json";
         private const int DiasDeGracia = 45; // Los días de tolerancia sin pago o sin internet
 
         [STAThread]
