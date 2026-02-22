@@ -342,7 +342,7 @@ namespace Layouts_K2
                 }
                 else
                 {
-                    e.CellStyle.BackColor = Color.LightCoral; // Incorrecto (Largo inválido)
+                    e.CellStyle.BackColor = Color.Orange; // Incorrecto (Largo inválido)
                     e.CellStyle.ForeColor = Color.White;
                 }
             }
@@ -456,6 +456,26 @@ namespace Layouts_K2
                 MessageBox.Show("No se pudo conectar con el manual: " + ex.Message,
                                 "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Nominas_Load(object sender, EventArgs e)
+        {
+            ActualizarContador();
+
+            // Aseguramos que el DataGridView permita mostrar ToolTips
+            dataGridView1.ShowCellToolTips = true;
+
+            // Columna 1: NOMBRE
+            dataGridView1.Columns[0].HeaderCell.ToolTipText = "Nombre completo del empleado." +
+                "\nLa celda se coloca en rojo sino esta vacia.";
+
+            // Columna 2: CUENTA/CABLE
+            dataGridView1.Columns[1].HeaderCell.ToolTipText = "Numero de cuenta de BBVA (10 digitos) o CLABE interbancaria (18 digitos) " +
+                "\nLa celda se colocará en verde si se cumple con el formato de 10 o 18 digitos y en naranja sino se cumple con el formato.";
+
+            // Columna 3: MONTO
+            dataGridView1.Columns[2].HeaderCell.ToolTipText = "Monto a pagar, se forzará el formato a dos decimales (######.00)" +
+                "\nLa celda se coloca en rojo sino esta vacia.";
         }
     }
 }

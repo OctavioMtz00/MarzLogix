@@ -69,7 +69,8 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, CUENTA, IMPORTE });
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Location = new Point(10, 9);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = SystemColors.Control;
@@ -83,7 +84,7 @@
             dataGridViewCellStyle7.SelectionBackColor = Color.Lavender;
             dataGridViewCellStyle7.SelectionForeColor = Color.Black;
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridView1.Size = new Size(710, 601);
+            dataGridView1.Size = new Size(708, 451);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellFormatting += dataGridView1_CellFormatting;
@@ -130,9 +131,10 @@
             // btnLONOM
             // 
             btnLONOM.Cursor = Cursors.Hand;
-            btnLONOM.Location = new Point(594, 656);
+            btnLONOM.Location = new Point(610, 471);
+            btnLONOM.Margin = new Padding(3, 2, 3, 2);
             btnLONOM.Name = "btnLONOM";
-            btnLONOM.Size = new Size(124, 45);
+            btnLONOM.Size = new Size(108, 34);
             btnLONOM.TabIndex = 2;
             btnLONOM.Text = "Generar Layout";
             btnLONOM.UseVisualStyleBackColor = true;
@@ -141,9 +143,10 @@
             // btnCNOM
             // 
             btnCNOM.Cursor = Cursors.Hand;
-            btnCNOM.Location = new Point(594, 707);
+            btnCNOM.Location = new Point(608, 538);
+            btnCNOM.Margin = new Padding(3, 2, 3, 2);
             btnCNOM.Name = "btnCNOM";
-            btnCNOM.Size = new Size(124, 45);
+            btnCNOM.Size = new Size(108, 34);
             btnCNOM.TabIndex = 3;
             btnCNOM.Text = "Limpiar tabla";
             btnCNOM.UseVisualStyleBackColor = true;
@@ -153,9 +156,10 @@
             // 
             btnSalir.Cursor = Cursors.Hand;
             btnSalir.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSalir.Location = new Point(12, 664);
+            btnSalir.Location = new Point(10, 498);
+            btnSalir.Margin = new Padding(3, 2, 3, 2);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(122, 82);
+            btnSalir.Size = new Size(107, 62);
             btnSalir.TabIndex = 4;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
@@ -165,9 +169,9 @@
             // 
             lblContador.AutoSize = true;
             lblContador.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblContador.Location = new Point(238, 628);
+            lblContador.Location = new Point(268, 471);
             lblContador.Name = "lblContador";
-            lblContador.Size = new Size(227, 27);
+            lblContador.Size = new Size(182, 22);
             lblContador.TabIndex = 5;
             lblContador.Text = "Total de registros: 0";
             // 
@@ -175,9 +179,9 @@
             // 
             lblSumaImportes.AutoSize = true;
             lblSumaImportes.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSumaImportes.Location = new Point(205, 664);
+            lblSumaImportes.Location = new Point(232, 498);
             lblSumaImportes.Name = "lblSumaImportes";
-            lblSumaImportes.Size = new Size(311, 37);
+            lblSumaImportes.Size = new Size(253, 30);
             lblSumaImportes.TabIndex = 6;
             lblSumaImportes.Text = "Total importes: $0.00";
             // 
@@ -186,18 +190,18 @@
             blHelp.AutoSize = true;
             blHelp.Cursor = Cursors.Hand;
             blHelp.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            blHelp.Location = new Point(269, 738);
+            blHelp.Location = new Point(297, 555);
             blHelp.Name = "blHelp";
-            blHelp.Size = new Size(168, 19);
+            blHelp.Size = new Size(136, 17);
             blHelp.TabIndex = 7;
             blHelp.Text = "¿Necesitas ayuda?";
             blHelp.Click += blHelp_Click;
             // 
             // Nominas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(730, 768);
+            ClientSize = new Size(728, 583);
             ControlBox = false;
             Controls.Add(blHelp);
             Controls.Add(lblSumaImportes);
@@ -207,12 +211,16 @@
             Controls.Add(btnLONOM);
             Controls.Add(dataGridView1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
+            MaximumSize = new Size(744, 622);
+            MinimumSize = new Size(744, 622);
             Name = "Nominas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dispersión de nómina";
             FormClosing += Nominas_FormClosing;
             FormClosed += Nominas_FormClosed;
+            Load += Nominas_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -324,5 +324,35 @@ namespace Layouts_K2
         {
 
         }
+
+        private void Altas_MB_Load(object sender, EventArgs e)
+        {
+            ActualizarContador();
+
+
+            // Aseguramos que el DataGridView permita mostrar ToolTips
+            dataGridView1.ShowCellToolTips = true;
+
+            // Columna 1: CUENTA
+            dataGridView1.Columns[0].HeaderCell.ToolTipText = "Numero de cuenta BBVA de 10 digitos" +
+                "\nLa celda se coloca en rojo sino esta vacia. " +
+                "\nSi la celda cumple con el formato de 10 digitos esta se coloca en color verde y en naraja sino se cumple la condicion.";
+
+            // Columna 2: DIVISA
+            dataGridView1.Columns[1].HeaderCell.ToolTipText = "Codigo de divisa de 3 caracteres (MXP, USD, EUR) ";
+
+            // Columna 3: IMPORTE MAXIMO
+            dataGridView1.Columns[2].HeaderCell.ToolTipText = "Monto a pagar, se forzará el formato a dos decimales (######.00)" +
+                "\nLa celda se coloca en rojo sino esta vacia.";
+
+            // Columna 4: ALIAS
+            dataGridView1.Columns[3].HeaderCell.ToolTipText = "Nombre corto de referencia." +
+                "\nLa celda se coloca en rojo sino esta vacia.";
+           
+            // Columna 5: EMAIL
+            dataGridView1.Columns[4].HeaderCell.ToolTipText = "Correo electronico para envio de comprobante." +
+                "\nLa celda se coloca en rojo sino esta vacia.";
+
+        }
     }
 }

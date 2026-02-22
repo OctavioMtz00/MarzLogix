@@ -69,7 +69,8 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, CUENTA, IMPORTE, Column1, Column2 });
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Location = new Point(12, 10);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = SystemColors.Control;
@@ -83,7 +84,7 @@
             dataGridViewCellStyle7.SelectionBackColor = Color.Lavender;
             dataGridViewCellStyle7.SelectionForeColor = Color.Black;
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridView1.Size = new Size(900, 511);
+            dataGridView1.Size = new Size(900, 383);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellFormatting += dataGridView1_CellFormatting;
             dataGridView1.CellValidated += dataGridView1_CellValidated;
@@ -141,9 +142,10 @@
             // 
             // button2
             // 
-            button2.Location = new Point(12, 536);
+            button2.Location = new Point(10, 402);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(122, 67);
+            button2.Size = new Size(107, 50);
             button2.TabIndex = 3;
             button2.Text = "Salir";
             button2.UseVisualStyleBackColor = true;
@@ -151,9 +153,10 @@
             // 
             // button3
             // 
-            button3.Location = new Point(792, 529);
+            button3.Location = new Point(807, 400);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(120, 34);
+            button3.Size = new Size(105, 26);
             button3.TabIndex = 4;
             button3.Text = "Generar Layout";
             button3.UseVisualStyleBackColor = true;
@@ -161,9 +164,10 @@
             // 
             // button4
             // 
-            button4.Location = new Point(792, 569);
+            button4.Location = new Point(807, 430);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(120, 34);
+            button4.Size = new Size(105, 26);
             button4.TabIndex = 5;
             button4.Text = "Limpiar tabla";
             button4.UseVisualStyleBackColor = true;
@@ -173,18 +177,18 @@
             // 
             lblContador.AutoSize = true;
             lblContador.Font = new Font("Calibri", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblContador.Location = new Point(294, 549);
+            lblContador.Location = new Point(358, 411);
             lblContador.Name = "lblContador";
-            lblContador.Size = new Size(218, 35);
+            lblContador.Size = new Size(174, 27);
             lblContador.TabIndex = 6;
             lblContador.Text = "Total de registros:";
             lblContador.Click += lblContador_Click;
             // 
             // Altas_MB
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(922, 615);
+            ClientSize = new Size(924, 467);
             ControlBox = false;
             Controls.Add(lblContador);
             Controls.Add(button4);
@@ -192,11 +196,13 @@
             Controls.Add(button2);
             Controls.Add(dataGridView1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
-            MaximumSize = new Size(940, 662);
-            MinimumSize = new Size(940, 662);
+            MaximumSize = new Size(940, 506);
+            MinimumSize = new Size(940, 506);
             Name = "Altas_MB";
             Text = "Altas Mismo Banco";
+            Load += Altas_MB_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -242,13 +242,13 @@ namespace Layouts_K2
             dataGridView1.Columns[1].HeaderCell.ToolTipText = "Monto del pago.\nNo incluya símbolos ($) ni comas.\nEl sistema forzará 2 decimales automáticamente.";
 
             // Columna 3: TITULAR
-            dataGridView1.Columns[2].HeaderCell.ToolTipText = "Nombre oficial del beneficiario.\nSe convertirá a MAYÚSCULAS automáticamente.";
+            dataGridView1.Columns[2].HeaderCell.ToolTipText = "Nombre oficial del beneficiario.";
 
             // Columna 4: ALIAS
-            dataGridView1.Columns[3].HeaderCell.ToolTipText = "Nombre corto de referencia (Máx. 30 caracteres).";
+            dataGridView1.Columns[3].HeaderCell.ToolTipText = "Nombre corto de referencia.";
 
             // Columna 5: EMAIL
-            dataGridView1.Columns[4].HeaderCell.ToolTipText = "Correo electrónico para envío de comprobante.\nSe convertirá a minúsculas automáticamente.";
+            dataGridView1.Columns[4].HeaderCell.ToolTipText = "Correo electrónico para envío de comprobante.";
         }
 
         private void ActualizarContador()
