@@ -70,6 +70,23 @@ namespace Layouts_K2
 
         private void Pagos_mixtos_Load(object sender, EventArgs e)
         {
+            ActualizarContador();
+
+            // Aseguramos que el DataGridView permita mostrar ToolTips
+            dataGridView1.ShowCellToolTips = true;
+
+            // Columna 1: TIPO DE OPERACION
+            dataGridView1.Columns[0].HeaderCell.ToolTipText = "1.- MISMO BANCO  \n 2.- INTERBANCARIA \n 3.- INTERNACIONAL";
+
+            // Columna 2: CUENTA CARGO
+            dataGridView1.Columns[1].HeaderCell.ToolTipText = "1.- MISMO BANCO - Cuenta de 10 dígitos  \n 2.- INTERBANCARIA - Cuenta CABLE de 18 dígitos  \n 3.- INTERNACIONAL ";
+
+            // Columna 3: IMPORTE
+            dataGridView1.Columns[3].HeaderCell.ToolTipText = "Monto a pagar \nSe redondea a dos decimales ";
+
+            // Columna 4: DIVISA
+            dataGridView1.Columns[4].HeaderCell.ToolTipText = "USD, EUR, COP ";
+
 
         }
 
@@ -416,7 +433,7 @@ namespace Layouts_K2
             InsertarCampoManual(ref linea, col2.Substring(0, Math.Min(3, col2.Length)), 90, 3);
 
             InsertarCampoManual(ref linea, fila.Cells[5].Value?.ToString().PadRight(30, ' '), 93, 30); // 94-123 (Col 6)
-            InsertarCampoManual(ref linea, fila.Cells[6].Value?.ToString(), 123, 7); // 124-130 (Col 7)
+            InsertarCampoManual(ref linea, fila.Cells[6].Value?.ToString().PadLeft(7, '0'), 123, 7); // 124-130 (Col 7)
             InsertarCampoManual(ref linea, "H", 130, 1); // 131
 
             return new string(linea);

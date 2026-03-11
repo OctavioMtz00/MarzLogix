@@ -78,7 +78,7 @@ namespace Layouts_K2
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            string url = "https://app.bitmx.cloud/Fincore/Manual.html";
+            string url = "https://app.bitmx.cloud/MarzLogix/Manual.html";
             try
             {
                 // Abre el manual en el navegador predeterminado

@@ -19,6 +19,32 @@ namespace Layouts_K2
         private void Altas_int_Load(object sender, EventArgs e)
         {
             ActualizarContador();
+
+
+            // Aseguramos que el DataGridView permita mostrar ToolTips
+            dataGridView1.ShowCellToolTips = true;
+
+            // Columna 1: CUENTA
+            dataGridView1.Columns[0].HeaderCell.ToolTipText = "Numero de cuenta del beneficiario" +
+                "\nLa celda se coloca en rojo sino esta vacia. " +
+                "\nMáximo 35 caracteres";
+
+            // Columna 2: DIVISA
+            dataGridView1.Columns[1].HeaderCell.ToolTipText = "Código de divisa de 3 caracteres (MXP, USD, EUR, COP) ";
+
+            // Columna 3: IMPORTE MAXIMO
+            dataGridView1.Columns[2].HeaderCell.ToolTipText = "Monto máximo que se puede transferir a la cuenta";
+
+            // Columna 4: NOMBRE DEL BENEFICIARIO
+            dataGridView1.Columns[3].HeaderCell.ToolTipText = "Nombre completo del beneficiario";
+
+            // Columna 5: ALIAS
+            dataGridView1.Columns[4].HeaderCell.ToolTipText = "Nombre corto de referencia";
+
+            // Columna 6: Codigo ABA/ BIC
+            dataGridView1.Columns[5].HeaderCell.ToolTipText = "Nombre corto de referencia";
+
+            
         }
 
         private void PegarDesdeExcel()

@@ -39,6 +39,7 @@
             btnAltIB = new Button();
             btnExit = new Button();
             btnHelp = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -46,10 +47,9 @@
             // 
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(248, 132);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(283, 176);
             button1.Name = "button1";
-            button1.Size = new Size(150, 56);
+            button1.Size = new Size(171, 75);
             button1.TabIndex = 0;
             button1.Text = "Altas intenacionales";
             button1.UseVisualStyleBackColor = true;
@@ -59,20 +59,19 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(122, 27);
+            label1.Location = new Point(120, 40);
             label1.Name = "label1";
-            label1.Size = new Size(249, 26);
+            label1.Size = new Size(303, 34);
             label1.TabIndex = 1;
-            label1.Text = "Bienvenido a FINCORE";
+            label1.Text = "Bienvenido a BitLogix";
             label1.Click += label1_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(343, 287);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(362, 378);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(116, 86);
+            pictureBox1.Size = new Size(164, 123);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
@@ -81,9 +80,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(284, 375);
+            label2.Location = new Point(298, 504);
             label2.Name = "label2";
-            label2.Size = new Size(175, 15);
+            label2.Size = new Size(228, 20);
             label2.TabIndex = 3;
             label2.Text = "Elaborado por Octavio Martinez";
             // 
@@ -92,10 +91,9 @@
             btnNom.Cursor = Cursors.Hand;
             btnNom.FlatAppearance.BorderSize = 0;
             btnNom.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNom.Location = new Point(70, 72);
-            btnNom.Margin = new Padding(3, 2, 3, 2);
+            btnNom.Location = new Point(80, 96);
             btnNom.Name = "btnNom";
-            btnNom.Size = new Size(150, 56);
+            btnNom.Size = new Size(171, 75);
             btnNom.TabIndex = 4;
             btnNom.Text = "Dispersión de Nóminas";
             btnNom.UseVisualStyleBackColor = true;
@@ -105,10 +103,9 @@
             // 
             btnPmx.Cursor = Cursors.Hand;
             btnPmx.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPmx.Location = new Point(70, 132);
-            btnPmx.Margin = new Padding(3, 2, 3, 2);
+            btnPmx.Location = new Point(80, 176);
             btnPmx.Name = "btnPmx";
-            btnPmx.Size = new Size(150, 56);
+            btnPmx.Size = new Size(171, 75);
             btnPmx.TabIndex = 5;
             btnPmx.Text = "Pagos mixtos";
             btnPmx.UseVisualStyleBackColor = true;
@@ -118,10 +115,9 @@
             // 
             btnACM.Cursor = Cursors.Hand;
             btnACM.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnACM.Location = new Point(70, 201);
-            btnACM.Margin = new Padding(3, 2, 3, 2);
+            btnACM.Location = new Point(80, 268);
             btnACM.Name = "btnACM";
-            btnACM.Size = new Size(150, 56);
+            btnACM.Size = new Size(171, 75);
             btnACM.TabIndex = 6;
             btnACM.Text = "Altas mismo banco";
             btnACM.UseVisualStyleBackColor = true;
@@ -131,10 +127,9 @@
             // 
             btnAltIB.Cursor = Cursors.Hand;
             btnAltIB.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAltIB.Location = new Point(248, 72);
-            btnAltIB.Margin = new Padding(3, 2, 3, 2);
+            btnAltIB.Location = new Point(283, 96);
             btnAltIB.Name = "btnAltIB";
-            btnAltIB.Size = new Size(150, 56);
+            btnAltIB.Size = new Size(171, 75);
             btnAltIB.TabIndex = 7;
             btnAltIB.Text = "Altas interbancarias";
             btnAltIB.UseVisualStyleBackColor = true;
@@ -144,10 +139,9 @@
             // 
             btnExit.Cursor = Cursors.Hand;
             btnExit.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExit.Location = new Point(24, 347);
-            btnExit.Margin = new Padding(3, 2, 3, 2);
+            btnExit.Location = new Point(27, 463);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(95, 36);
+            btnExit.Size = new Size(109, 48);
             btnExit.TabIndex = 9;
             btnExit.Text = "Salir";
             btnExit.UseVisualStyleBackColor = true;
@@ -157,22 +151,33 @@
             // 
             btnHelp.Cursor = Cursors.Hand;
             btnHelp.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnHelp.Location = new Point(248, 201);
-            btnHelp.Margin = new Padding(3, 2, 3, 2);
+            btnHelp.Location = new Point(283, 268);
             btnHelp.Name = "btnHelp";
-            btnHelp.Size = new Size(150, 56);
+            btnHelp.Size = new Size(171, 75);
             btnHelp.TabIndex = 10;
             btnHelp.Text = "Manual";
             btnHelp.UseVisualStyleBackColor = true;
             btnHelp.Click += btnHelp_Click;
             // 
+            // button2
+            // 
+            button2.Cursor = Cursors.Hand;
+            button2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Location = new Point(80, 358);
+            button2.Name = "button2";
+            button2.Size = new Size(171, 75);
+            button2.TabIndex = 11;
+            button2.Text = "Pagos Internacionales";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // Bienvenida
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(471, 400);
+            ClientSize = new Size(538, 533);
             ControlBox = false;
+            Controls.Add(button2);
             Controls.Add(btnHelp);
             Controls.Add(btnExit);
             Controls.Add(btnAltIB);
@@ -184,7 +189,6 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "Bienvenida";
             StartPosition = FormStartPosition.CenterScreen;
@@ -209,5 +213,6 @@
         private Button btnAltIB;
         private Button btnExit;
         private Button btnHelp;
+        private Button button2;
     }
 }
