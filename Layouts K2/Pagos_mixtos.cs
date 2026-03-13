@@ -612,6 +612,11 @@ namespace Layouts_K2
             e.CellStyle.BackColor = Color.White;
             e.CellStyle.ForeColor = Color.Black;
         }
+
+        private void Pagos_mixtos_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 
 }

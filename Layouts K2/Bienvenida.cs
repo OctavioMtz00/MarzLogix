@@ -99,5 +99,12 @@ namespace Layouts_K2
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form frm1 = new Pagos_Internacionales();
+            frm1.Show();
+            this.Hide();
+        }
     }
 }

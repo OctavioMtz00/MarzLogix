@@ -328,6 +328,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pagos mixtos";
             Load += Pagos_mixtos_Load;
+            KeyDown += Pagos_mixtos_KeyDown;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

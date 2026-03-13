@@ -39,7 +39,7 @@
             btnAltIB = new Button();
             btnExit = new Button();
             btnHelp = new Button();
-            button2 = new Button();
+            btnInter2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -159,16 +159,17 @@
             btnHelp.UseVisualStyleBackColor = true;
             btnHelp.Click += btnHelp_Click;
             // 
-            // button2
+            // btnInter2
             // 
-            button2.Cursor = Cursors.Hand;
-            button2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(80, 358);
-            button2.Name = "button2";
-            button2.Size = new Size(171, 75);
-            button2.TabIndex = 11;
-            button2.Text = "Pagos Internacionales";
-            button2.UseVisualStyleBackColor = true;
+            btnInter2.Cursor = Cursors.Hand;
+            btnInter2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnInter2.Location = new Point(80, 358);
+            btnInter2.Name = "btnInter2";
+            btnInter2.Size = new Size(171, 75);
+            btnInter2.TabIndex = 11;
+            btnInter2.Text = "Pagos Internacionales";
+            btnInter2.UseVisualStyleBackColor = true;
+            btnInter2.Click += button2_Click;
             // 
             // Bienvenida
             // 
@@ -177,7 +178,7 @@
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(538, 533);
             ControlBox = false;
-            Controls.Add(button2);
+            Controls.Add(btnInter2);
             Controls.Add(btnHelp);
             Controls.Add(btnExit);
             Controls.Add(btnAltIB);
@@ -213,6 +214,6 @@
         private Button btnAltIB;
         private Button btnExit;
         private Button btnHelp;
-        private Button button2;
+        private Button btnInter2;
     }
 }
