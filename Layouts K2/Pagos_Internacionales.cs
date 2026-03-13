@@ -350,5 +350,10 @@ namespace Layouts_K2
                     linea[inicio + i] = texto[i];
             }
         }
+
+        private void Pagos_Internacionales_Load(object sender, EventArgs e)
+        {
+            ActualizarContador();
+        }
     }
 }

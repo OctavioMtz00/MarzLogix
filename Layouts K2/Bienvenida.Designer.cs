@@ -47,7 +47,7 @@
             // 
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(283, 176);
+            button1.Location = new Point(283, 177);
             button1.Name = "button1";
             button1.Size = new Size(171, 75);
             button1.TabIndex = 0;
@@ -69,9 +69,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(362, 378);
+            pictureBox1.Location = new Point(374, 378);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(164, 123);
+            pictureBox1.Size = new Size(152, 123);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
@@ -103,7 +103,7 @@
             // 
             btnPmx.Cursor = Cursors.Hand;
             btnPmx.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPmx.Location = new Point(80, 176);
+            btnPmx.Location = new Point(80, 177);
             btnPmx.Name = "btnPmx";
             btnPmx.Size = new Size(171, 75);
             btnPmx.TabIndex = 5;
@@ -115,7 +115,7 @@
             // 
             btnACM.Cursor = Cursors.Hand;
             btnACM.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnACM.Location = new Point(80, 268);
+            btnACM.Location = new Point(80, 258);
             btnACM.Name = "btnACM";
             btnACM.Size = new Size(171, 75);
             btnACM.TabIndex = 6;
@@ -151,7 +151,7 @@
             // 
             btnHelp.Cursor = Cursors.Hand;
             btnHelp.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnHelp.Location = new Point(283, 268);
+            btnHelp.Location = new Point(283, 258);
             btnHelp.Name = "btnHelp";
             btnHelp.Size = new Size(171, 75);
             btnHelp.TabIndex = 10;
@@ -163,7 +163,7 @@
             // 
             btnInter2.Cursor = Cursors.Hand;
             btnInter2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInter2.Location = new Point(80, 358);
+            btnInter2.Location = new Point(80, 339);
             btnInter2.Name = "btnInter2";
             btnInter2.Size = new Size(171, 75);
             btnInter2.TabIndex = 11;

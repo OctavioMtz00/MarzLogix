@@ -55,6 +55,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToResizeColumns = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             dataGridViewCellStyle1.ForeColor = Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = Color.LightCyan;
