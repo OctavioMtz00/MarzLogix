@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="Layouts K2/BitLogix.csproj" />
+  <Project Path="Layouts K2/BitLogix.csproj">
+    <Build Solution="Release|*" Project="false" />
+  </Project>
 </Solution>

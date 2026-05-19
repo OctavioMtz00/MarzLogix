@@ -265,6 +265,7 @@
             MaximumSize = new Size(1591, 823);
             MinimumSize = new Size(1591, 823);
             Name = "Pagos_Internacionales";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Pagos Internacionales";
             Load += Pagos_Internacionales_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

@@ -234,7 +234,7 @@ namespace Layouts_K2
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Archivo de texto (*.txt)|*.txt";
-            saveFileDialog.Title = "MarzLogix | Layout Internacional 352 (13 Columnas)";
+            saveFileDialog.Title = "MarzLogix | Layout Internacional";
             saveFileDialog.FileName = "Layout_OPI_Internacional_" + DateTime.Now.ToString("yyyyMMdd");
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)

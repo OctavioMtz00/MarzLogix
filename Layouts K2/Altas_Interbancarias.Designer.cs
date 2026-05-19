@@ -185,6 +185,7 @@
             Controls.Add(dataGridView1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Altas_Interbancarias";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Altas Interbancarias";
             Load += Altas_Interbancarias_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
